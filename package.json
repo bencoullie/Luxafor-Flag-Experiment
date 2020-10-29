@@ -5,5 +5,12 @@
   "main": "index.js",
   "author": "bencoullie@gmail.com",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "luxafor-api": "^3.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "watch-media": "node index.js"
+  }
 }
