@@ -1,0 +1,9 @@
+{
+  "name": "luxafor-flag-experiment",
+  "version": "1.0.0",
+  "description": "Testing out some Luxafor flag APIs",
+  "main": "index.js",
+  "author": "bencoullie@gmail.com",
+  "license": "MIT",
+  "private": false
+}
