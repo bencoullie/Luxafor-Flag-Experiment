@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.user.loginscript</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/Ben/workspace/bencshit/luxafor-flag-experiment</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/Ben/workspace/bencshit/luxafor-flag-experiment/stderr.log</string>
+  <key>StandardOutPath</key>
+  <string>/Users/Ben/workspace/bencshit/luxafor-flag-experiment/stdout.log</string>
+  <key>ProgramArguments</key>
+  <array><string>/Users/Ben/workspace/bencshit/luxafor-flag-experiment/startupScript.sh</string></array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>

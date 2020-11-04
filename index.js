@@ -1,26 +1,13 @@
-const fetch = require('node-fetch');
+const { watchMeetings } = require('./watchMeetings.js')
 
-// Using luxafor-api package to interface with hardware
-const { device } = require('luxafor-api')
+// Little script to see if I've completed my oneyearonemedia todo list
+// watchMedia();
 
-// Connect to the first available (connected) flag
-const luxaforFlag = device()
+// Little script to alert me when I have an impending meeting
+console.log('Script started boiiii')
+watchMeetings()
 
-const watchMedia = () => {
-	setInterval(async () => {
-		// eslint-disable-next-line no-console
-		console.log('Fetching')
-		const response = await fetch('https://oneyearonemediaserver.herokuapp.com/api/profiles')
-		const data = await response.json()
-		const myMedia = data.filter(profile => profile.consumer_name === 'Benc')
-		const completedMedia = myMedia.every(item => item.completed)
-
-		if (completedMedia) {
-			luxaforFlag.color('green')
-		} else {
-			luxaforFlag.color('red')
-		}
-	}, 1000)
-}
-
-watchMedia()
+// const { device } = require('luxafor-api')
+// const luxaforFlag = device()
+// console.log('getting here')
+// luxaforFlag.police(10)
