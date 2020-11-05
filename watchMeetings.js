@@ -7,6 +7,9 @@ const luxaforFlag = device()
 const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 const TOKEN_PATH = 'token.json'
 
+// Gives console logs and errors a nice little timestamp
+require('console-stamp')(console, { label: false })
+
 const watchMeetings = () => {
   setInterval(() => {
     const currentHour = new Date().getHours()
@@ -108,12 +111,20 @@ function getNextEvent(auth) {
 
       const currentTime = new Date()
       const meetingStartTime = new Date(nextEvent.start.dateTime)
-      const secondsUntilNextMeeting = (meetingStartTime - currentTime) / 1000
+      const secondsUntilNextMeeting = Math.round(
+        (meetingStartTime - currentTime) / 1000
+      )
       const meetingIsComingUp = secondsUntilNextMeeting <= 30
       const meetingHasStarted = secondsUntilNextMeeting <= 0
 
-      if (!meetingIsComingUp || meetingHasStarted) {
-        return console.log('Meeting not coming up or has started.')
+      if (meetingHasStarted) {
+        return console.log('Currently in the middle of a meeting.')
+      }
+
+      if (!meetingIsComingUp) {
+        return console.log(
+          `Next meeting in ${secondsUntilNextMeeting} seconds.`
+        )
       }
 
       // Alert user
